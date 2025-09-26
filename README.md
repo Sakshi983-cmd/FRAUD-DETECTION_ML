@@ -1,29 +1,62 @@
-# Fraud Detection ML 🚨
 
-## 📌 Overview
-This project detects fraudulent transactions using a **Random Forest Classifier** trained on synthetic transaction data.  
-It is deployed using **Streamlit Cloud**.
+# Fraud Detection System 💳
+
+A simple **Fraud Detection App** built with **Streamlit** and **Scikit-learn**.  
+The app trains a **Random Forest** model on transaction data and predicts whether a transaction is fraudulent.
+
+---
+
+## 📂 Project Structure
+fraud-detection-ml/
+├── app.py # Streamlit application
+├── fraud_data.csv # Transaction dataset
+├── requirements.txt # Python dependencies
+├── README.md # Project documentation
+
+
+---
 
 ## 📊 Dataset
-- **fraud_data.csv** contains transaction details:
-  - transaction_id
-  - amount
-  - transaction_type
-  - account_age_days
-  - location
-  - is_fraud
+The dataset `fraud_data.csv` contains the following columns:
 
-## ⚙️ Workflow
-1. Data preprocessing (encoding categorical features).
-2. Train Random Forest Classifier.
-3. Save model with pickle.
-4. Streamlit app for prediction.
+- `transaction_id` : Unique transaction ID  
+- `amount` : Transaction amount  
+- `transaction_type` : Type of transaction (e.g., debit, cash_out, transfer, payment)  
+- `account_age_days` : Number of days the account has existed  
+- `location` : City of transaction  
+- `is_fraud` : 0 = Legitimate, 1 = Fraudulent  
 
-## 📈 Metrics
-- Accuracy: ~94%
-- False Positive Rate: ~2%
+---
 
-## 🚀 Deployment
+## ⚙️ Features
+- Direct **model training** from dataset (no pickle file required)  
+- Streamlit UI to input new transactions and check fraud  
+- Shows **dataset preview** and **model accuracy**  
+- Random Forest Classifier with balanced handling  
+
+---
+
+## 🚀 How to Run
+1. Clone the repo:
 ```bash
-# Run locally
+git clone <your-repo-url>
+cd fraud-detection-ml
+
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+
+Run the app:
+
 streamlit run app.py
+
+
+Open the link shown in terminal to use the app.
+
+📈 Metrics
+
+Model accuracy: ~94%
+
+False Positive Rate: ~2%
